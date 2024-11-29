@@ -115,8 +115,8 @@ pipeline {
                 }
             }
         }
-//         stage('check prod website availability') {
-//             steps {
+         stage('check prod website availability') {
+/             steps {
 //                  sh "sleep 90"
 //                  sh "curl -s -o /dev/null -w \"%{http_code}\" https://prod.eamanzebuzz.com"
 //                 script {
@@ -130,4 +130,4 @@ pipeline {
 //             }
 //         }
 //     }
-// }
+ }
