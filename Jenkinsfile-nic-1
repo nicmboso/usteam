@@ -75,10 +75,11 @@ pipeline {
         // }
         stage('host login') {
             steps {
-                sshagent(['ansible-key']) {
+                sshagent(['jumpbox-key']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@$BASTION_HOST'
                 }
             }
+        }
         stage('Deploy to stage') {
             steps {
                 sshagent(['ansible-key']) {
