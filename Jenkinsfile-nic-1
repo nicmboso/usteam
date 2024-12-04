@@ -49,7 +49,8 @@ pipeline {
         }
         stage('OWASP FS SCAN') {
             steps {
-                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DP-Check'
+                //browse for nvd api key, to request for key
+                dependencyCheck additionalArguments: '--format HTML', nvdCredentialsId: 'nvd-key', odcInstallation: 'DP-Check'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
