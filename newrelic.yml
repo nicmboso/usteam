@@ -4,7 +4,7 @@ common: &default_settings
   license_key: '0195b6b9d62f31f9764738ce1a7b989eFFFFNRAL'
   agent_enabled: true
   # Set the name of your application as you'd like it show up in New Relic.
-  app_name: 'myapp'
+  app_name: myapp'
   high_security: false
   enable_auto_app_naming: false
   enable_auto_transaction_naming: true
