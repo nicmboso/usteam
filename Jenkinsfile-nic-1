@@ -4,8 +4,8 @@ pipeline {
         NEXUS_USER = credentials('nexus-username')
         NEXUS_PASSWORD = credentials('nexus-password')
         NEXUS_REPO = credentials('nexus-repo')
-        BASTION_HOST = credentials('bastion-host')
-        ANSIBLE_HOST = credentials('ansible-host')
+        BASTION_HOST = credentials('bastion-ip')
+        ANSIBLE_HOST = credentials('ansible-ip')
     }
     stages {
         stage('Code Analysis') {
