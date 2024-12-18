@@ -40,7 +40,7 @@ pipeline {
                 type: 'war']],
                 credentialsId: 'nexus-cred',
                 groupId: 'Petclinic',
-                nexusUrl: 'nexus2.dobetabeta.shop',
+                nexusUrl: 'nexus2.dobeta.shop',
                 nexusVersion: 'nexus3',
                 protocol: 'https',
                 repository: 'nexus-repo',
