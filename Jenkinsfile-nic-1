@@ -88,11 +88,11 @@ pipeline {
                     //sh '''
                     //  ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ec2-user@$BASTION_HOST" ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"
                     //'''
-                    //sh -c 'ssh -o StrictHostKeyChecking=no -J ec2-user@$BASTION_HOST ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"'
+                    sh 'ssh -o StrictHostKeyChecking=no -J ec2-user@$BASTION_HOST ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"'
                     //sh 'ssh -o StrictHostKeyChecking=no ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"'
-                    sh '''
-                      ssh -t -t ec2-user@$ANSIBLE_HOST -o StrictHostKeyChecking=no "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"
-                    '''
+                    //sh '''
+                      //ssh -t -t ec2-user@$ANSIBLE_HOST -o StrictHostKeyChecking=no "ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"
+                    //'''
                 }
             }
         }
@@ -124,11 +124,11 @@ pipeline {
                    //   ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ec2-user@$BASTION_HOST" ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/prod_hosts /etc/ansible/deployment.yml"
                    // '''
                     // sh 'ssh -t -t ec2-user@13.36.237.67 -o strictHostKeyChecking=no "ansible-playbook -i /etc/ansible/prod-hosts /etc/ansible/prod_playbook.yml"'
-                    //sh -c 'ssh -o StrictHostKeyChecking=no -J ubuntu@$BASTION_HOST ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/prod_hosts /etc/ansible/deployment.yml"'
+                    sh 'ssh -o StrictHostKeyChecking=no -J ubuntu@$BASTION_HOST ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/prod_hosts /etc/ansible/deployment.yml"'
                     //sh '''
                      //ssh -o StrictHostKeyChecking=no -J ec2-user@$BASTION_HOST ec2-user@$ANSIBLE_HOST "sudo ansible-playbook -i /etc/ansible/stage_hosts /etc/ansible/deployment.yml"
                     //'''
-                    sh 'ssh -o StrictHostKeyChecking=no ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/prod_hosts /etc/ansible/deployment.yml"'
+                    //sh 'ssh -o StrictHostKeyChecking=no ec2-user@$ANSIBLE_HOST "ansible-playbook -i /etc/ansible/prod_hosts /etc/ansible/deployment.yml"'
 
                 }
             }
